@@ -1,0 +1,28 @@
+{
+	"cale_galerie": "/resurse/imagini/galerie",
+	"imagini": [
+	  {
+		"cale_relativa": "/resurse/imagini/cat.jpg",
+		"nume_imag": "Nume imagine 1",
+		"alternativ": "text alternativ imagine 1",
+		"descriere_imag": "Text descriere 1",
+		"intervale_ore": [[2,7],[14,16],[22,23]]
+	  },
+	  {
+		"cale_relativa": "/resurse/imagini/cat.jpg",
+		"nume_imag": "Nume imagine 2",
+		"alternativ": "text alternativ imagine 2",
+		"descriere_imag": "Text descriere 2",
+		"intervale_ore": [[8,13],[18,21]]
+	  },
+	  {
+		"cale_relativa": "/resurse/imagini/cat.jpg",
+		"nume_imag": "Nume imagine 3",
+		"alternativ": "text alternativ imagine 3",
+		"descriere_imag": "Text descriere 3",
+		"intervale_ore": [[9,17],[19,20]]
+	  }
+	  
+	]
+  }
+  

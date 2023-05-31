@@ -1,0 +1,47 @@
+.galerie {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-gap: 20px;
+  }
+  
+  .imag {
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .imag img {
+    width: 100%;
+    height: auto;
+    display: block;
+    transition: filter 0.2s;
+  }
+  
+  .imag figcaption {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(0, 0, 0, 0.8);
+    color: #fff;
+    padding: 10px;
+    margin: 0;
+    opacity: 0;
+    transition: background-color 0.2s, color 0.2s, opacity 0.2s;
+  }
+  
+  .imag:hover img {
+    filter: brightness(100%);
+  }
+  
+  .imag:hover figcaption {
+    background-color: rgba(0, 0, 0, 0.6);
+    color: #fff;
+    opacity: 1;
+  }
+  
+  @media (max-width: 768px) {
+    .galerie {
+      grid-template-columns: 1fr;
+    }
+  }
+  

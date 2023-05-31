@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <%- include("../fragmente/head.ejs", {title: 'Despre noi', eroare: false}) %>
+    <p id="text" data-text="WetNose">WetNose</p>     
+       <!-- <p id="text" data-text="Reflexie">Reflexie</p> -->
+
+</head>
+<body>
+    <header><%- include("../fragmente/header.ejs", {eroare: false}) %></header>
+    
+    <div class="background" id="background1"></div>
+    <div class="background" id="background2"></div>
+    <div class="content">
+        <div class="miscare-orizontala">
+            <p>Salveaza vieti!</p>
+          </div>
+        <hr class="custom-hr">
+        <div class="content">
+            <div class="miscare-orizontala">
+                <p>Adoptă sau donează!</p>
+              </div>
+        
+        <h1>Despre noi</h1>
+        <div id="duotone"></div>
+        <div id="scriere-coloana">
+            <p>Adopția animalelor de companie, cum ar fi câinii și pisicile, este o decizie importantă care implică multe responsabilități. Când adopți un animal de companie, te angajezi să ai grijă de el pentru tot restul vieții sale. Asta înseamnă că va trebui să-i asiguri hrană, adăpost, îngrijire medicală și iubire.</p>
+            <p>Unul dintre cele mai mari avantaje ale adopției este că salvezi o viață. Multe adăposturi de animale sunt suprapopulate și, din păcate, nu toate animalele pot fi găzduite. Prin adopție, le oferi acestor animale o șansă la o viață mai bună.</p>
+            <p>Adopția unui câine sau a unei pisici poate fi de asemenea foarte satisfăcătoare. Animalele de companie pot aduce multă fericire în viețile oamenilor. </p>
+            <p>
+                Așadar, dacă te gândești să adopți un animal de companie, consideră opțiunile din adăposturile locale. Nu numai că vei salva o viață, dar te vei bucura și de compania unui nou prieten fidel.        
+            </p>
+        </div>
+       
+        
+
+
+          <!-- tbale transpus -->
+          <table class="tabel-transpus">
+            <thead>
+                <tr>
+                    <th>Nume</th>
+                    <th>Specie</th>
+                    <th>Voce obisnuita</th>
+                    <th>Voce suparata</th>
+                    <th>Voce vesela</th>
+                    <th>Voce aristocrata</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Miaunette</td>
+                    <td>pisica</td>
+                    <td>Miau</td>
+                    <td>Hisssss!</td>
+                    <td>Mia-miau! Miau!</td>
+                    <td>*Le miau</td>
+                </tr>
+                               
+           </tbody>
+        </table>
+        
+          
+    </div>
+
+
+    <footer style="z-index: 5; position: relative; "><%- include("../fragmente/footer.ejs") %></footer>
+    <!-- /*altfel nu se vede footerul peste background, obs: pe viitor sa nu aiba cnv z-index >5*/ -->
+</body>
+</html>

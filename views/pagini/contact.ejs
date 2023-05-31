@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <%- include("../fragmente/head.ejs", {title: 'Contact', eroare: false}) %>
+    <p id="text" data-text="WetNose">WetNose</p>     
+      
+
+</head>
+<body>
+    <!-- <header><%- include("../fragmente/header.ejs", {eroare: false}) %></header> -->
+    
+    <div class="video-background">
+        <video playsinline="playsinline" autoplay="autoplay" muted="muted" loop="loop">
+            <source src="/resurse/imagini/background2.mp4" type="video/mp4">
+        </video>
+    </div>
+    
+    <div class="content">
+        <table class="responsive-table">
+            <thead>
+              <tr>
+                <th>București</th>
+                <th>Ploiești</th>
+                <th>Brașov</th>
+                <th>Timișoara</th>
+                <th>Iași</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Str. Padeșu nr. 41</td>
+                <td>Str. Biruinței nr. 22</td>
+                <td>Blv. Primăverii 5C</td>
+                <td>Str. Agronomiei nr. 50</td>
+                <td>Intrare Parc principal</td>
+              </tr>
+            </tbody>
+            <tfoot>
+              <tr>
+                <th colspan="5">Total locații: 5</th>
+              </tr>
+            </tfoot>
+          </table>
+    
+    </div>
+    
+    
+
+   
+    <footer style="background: none; margin-top: 200px;"><%- include("../fragmente/footer.ejs") %></footer>
+    
+</body>
+</html>

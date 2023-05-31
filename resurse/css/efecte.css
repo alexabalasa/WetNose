@@ -1,0 +1,334 @@
+/*efecte css - etapa 4--------------------------------------------
+  ----------------------------------------------------------------
+  text cu reflexie*/
+  #text {
+    position:relative;
+    font-size: 20px;
+    line-height: 20px;
+    font-weight: bold;
+}
+
+#text::after {
+  content: attr(data-text);
+  position: absolute;
+  top: 100%;
+  left: 0;
+  transform: scaleY(-1);
+  opacity: 0.55;
+  font-size: 20px;
+    line-height: 20px;
+  display: block;
+  white-space: pre;
+  color: black;
+  filter: blur(1px);
+  transition: transform 0.9s ease-in-out;
+} 
+#text:hover::after {
+  transform: scaleY(-2);
+  /* pentru a se misca reflexia */
+}
+
+
+/*efect duotone*/
+
+#duotone {
+    margin: auto; 
+    margin-top: 20px;
+    margin-bottom: 20px;
+    width: 900px;
+    height: 150px;
+    background: url("/resurse/imagini/wetnose.png") center / cover no-repeat;
+    position: relative;
+    overflow: hidden;
+}
+
+
+#duotone::before, #duotone::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.5s;
+    mix-blend-mode: screen;
+}
+
+#duotone::before {
+    background: rgba(242, 0, 255, 0.5); /* c1, culoare roșie, înlocuiește cu culoarea dorită */
+    left: 0;
+    transform: translateX(-100%);
+}
+
+#duotone::after {
+    background: rgba(0, 0, 255, 0.5); /* c2, culoare albastră, înlocuiește cu culoarea dorită */
+    right: 0;
+    transform: translateX(100%);
+}
+
+#duotone:hover::before {
+    transform: translateX(0);
+}
+
+#duotone:hover::after {
+    transform: translateX(0);
+}
+
+/*scriere pe coloane */
+#scriere-coloana {
+    column-count: 1;
+    column-rule: 1px solid black;
+}
+
+@media (min-width: 600px) {
+    #scriere-coloana {
+        column-count: 2;
+    }
+}
+
+@media (min-width: 900px) {
+    #scriere-coloana {
+        column-count: 3;
+    }
+}
+
+
+/*Schimbarea afișării implicite a textului selectat*/
+:root {
+    --color-primary: #780b3e;
+    --color-secondary: #FFF;
+  }
+  
+  p::selection {
+    background: var(--color-primary);
+    color: var(--color-secondary);
+  }
+
+  /*text plimbaret orizontal*/
+  .miscare-orizontala {
+    overflow: hidden;
+    white-space: nowrap;
+    width: 200px;
+    margin: auto; 
+    text-align: center; 
+  }
+  
+  .miscare-orizontala p {
+    display: inline-block;
+    padding-left: 100%;
+    animation: miscare-orizontala 5s linear infinite;
+  }
+  
+  @keyframes miscare-orizontala {
+    from {
+        transform: translateX(-50%);
+      }
+      to {
+        transform: translateX(50%);
+      }
+  }
+
+  /* background fix la scroll*/
+  /* background fix la scroll*/
+.background {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center center;
+    background-attachment: fixed;
+    animation: changeBackground 10s infinite;
+  }
+  
+  #background1 {
+    background-image: linear-gradient(rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0.7)), url('/resurse/imagini/background.jpg');
+    z-index: 1;
+  }
+  
+  #background2 {
+    background-image: linear-gradient(rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0.7)), url('/resurse/imagini/wetnose1.png');
+    animation-delay: 5s;
+    z-index: 2;
+  }
+  
+  .content {
+    position: relative;
+    z-index: 3;
+    text-align: center; 
+  }
+  @keyframes changeBackground {
+    0%, 50% {
+      opacity: 0;
+    }
+    50.1%, 100% {
+      opacity: 1;
+    }
+  }
+
+  /*tabel ce isi inverseaza randurile cu coloanele la ecran mic*/
+  .responsive-table {
+    width: 100%;
+  }
+  
+  .responsive-table th, 
+  .responsive-table td {
+    padding: 10px;
+    border: 1px solid #ddd;
+  }
+  
+  @media (max-width: 600px) {
+    .responsive-table, 
+    .responsive-table thead, 
+    .responsive-table tbody, 
+    .responsive-table th, 
+    .responsive-table td, 
+    .responsive-table tr {
+      display: block;
+    }
+    
+    .responsive-table thead tr {
+      position: absolute;
+      top: -9999px;
+      left: -9999px;
+    }
+  
+    .responsive-table tr {
+      border: 1px solid #ddd;
+    }
+  
+    .responsive-table td {
+      border: none;
+      border-bottom: 1px solid #ddd;
+      position: relative;
+      padding-left: 50%;
+    }
+  
+    .responsive-table td::before {
+      position: absolute;
+      top: 6px;
+      left: 6px;
+      width: 45%;
+      padding-right: 10px;
+      white-space: nowrap;
+    }
+  
+    .responsive-table td:nth-of-type(1)::before {
+      content: "București";
+    }
+    
+    .responsive-table td:nth-of-type(2)::before {
+      content: "Ploiești";
+    }
+    
+    .responsive-table td:nth-of-type(3)::before {
+      content: "Brașov";
+    }
+    
+    .responsive-table td:nth-of-type(4)::before {
+      content: "Timișoara";
+    }
+    
+    .responsive-table td:nth-of-type(5)::before {
+      content: "Iași";
+    }
+  }
+  
+
+  /*tABEL 2 - TRANSPUS*/
+  .tabel_transpus {
+    width: 100%;
+}
+
+.tabel_transpus th, 
+.tabel_transpus td {
+    padding: 10px;
+    border: 1px solid #ddd;
+}
+
+@media (max-width: 600px) {
+    .tabel_transpus, 
+    .tabel_transpus thead, 
+    .tabel_transpus tbody, 
+    .tabel_transpus th, 
+    .tabel_transpus td, 
+    .tabel_transpus tr {
+        display: block;
+    }
+    
+    .tabel_transpus thead tr {
+        position: absolute;
+        top: -9999px;
+        left: -9999px;
+    }
+
+    .tabel_transpus tr {
+        border: 1px solid #ddd;
+    }
+
+    .tabel_transpus td {
+        border: none;
+        border-bottom: 1px solid #ddd;
+        position: relative;
+        padding-left: 50%;
+    }
+
+    .tabel_transpus td::before {
+        position: absolute;
+        top: 6px;
+        left: 6px;
+        width: 45%;
+        padding-right: 10px;
+        white-space: nowrap;
+    }
+  
+    .tabel_transpus td:nth-of-type(1)::before { content: "Nume"; }
+    .tabel_transpus td:nth-of-type(2)::before { content: "Specie"; }
+    .tabel_transpus td:nth-of-type(3)::before { content: "Voce obisnuita"; }
+    .tabel_transpus td:nth-of-type(4)::before { content: "Voce suparata"; }
+    .tabel_transpus td:nth-of-type(5)::before { content: "Voce vesela"; }
+    .tabel_transpus td:nth-of-type(6)::before { content: "Voce aristocrata"; }
+}
+
+/*stilitzare hr*/
+.custom-hr {
+    border: 0;
+    height: 1px;
+    background: linear-gradient(to right, 
+        transparent, 
+        var(--color-primary) 10%, 
+        var(--color-primary) 15%, 
+        transparent 15%, 
+        transparent 30%, 
+        var(--color-primary) 30%, 
+        var(--color-primary) 40%, 
+        transparent 40%, 
+        transparent 55%, 
+        var(--color-primary) 55%, 
+        var(--color-primary) 65%, 
+        transparent 65%, 
+        transparent 80%, 
+        var(--color-primary) 80%, 
+        var(--color-primary) 90%, 
+        transparent 90%, 
+        transparent);
+}
+  
+
+/*videoclip backgrd*/
+.video-background {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    overflow: hidden;
+    z-index: -1;
+}
+
+.video-background video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}

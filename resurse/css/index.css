@@ -1,0 +1,279 @@
+/* Stiluri pentru ecran mic (max-width: 767px) */
+@media (max-width: 767px) {
+    h1 {
+      font-size: 18px;
+      transition: font-size 0.3s ease;
+    }
+    
+    p {
+      font-size: 14px;
+      transition: font-size 0.3s ease;
+    }
+    
+    a {
+      font-size: 12px;
+      transition: font-size 0.3s ease;
+    }
+    #labute{
+      display:none;
+    }
+  }
+  
+  /* Stiluri pentru ecran mediu (min-width: 768px) și ecran mare (min-width: 1200px) */
+  @media (min-width: 768px) {
+    h1 {
+      font-size: 24px;
+      transition: font-size 0.3s ease;
+    }
+    
+    p {
+      font-size: 16px;
+      transition: font-size 0.3s ease;
+    }
+    
+    a {
+      font-size: 14px;
+      transition: font-size 0.3s ease;
+    }
+  }
+  
+  /* Stiluri comune pentru toate ecranele */
+  h1, p, a {
+    transition-property: font-size;
+    transition-duration: 0.3s;
+    transition-timing-function: ease;
+    margin: 0;
+  }
+  
+   body {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      background-color: #b7c9da;
+      margin: 0;
+      padding: 0;
+      width: 100%;
+      word-wrap: break-word;
+    }
+    header, main, footer {
+      width: 100%;
+      word-wrap: break-word;
+      max-width: 1200px;
+      margin: 20px auto;
+      background-color: #d5dee6;
+      padding: 20px;
+      border-radius: 5px;
+      text-align: center;
+    }
+/* proprietatile imaginii  wetnose-banner */
+    .image-wrapper {
+      display: flex;
+      justify-content: center;
+      margin-top: 20px;
+    }
+    .image-wrapper img {
+      width: 100%;
+      height: auto;
+      margin: 10px;
+    }
+    .table-container {
+      overflow-x: auto;
+  }
+  /*tabel*/
+  table {
+      border-collapse: separate;
+      border-spacing: 2px;
+      transition: all 0.5s ease-in-out;
+      width: 100%;
+  }
+  
+  table thead tr {
+      background-color: #666;
+      color: #fff;
+  }
+  
+  table tbody tr:nth-child(odd) {
+      background-color: #f2f2f2;
+  }
+  
+  table tbody tr:nth-child(even) {
+      background-color: #ddd;
+  }
+  
+  table tbody tr:hover {
+      background-color: #b2dfdb;
+  }
+  
+  table tfoot tr {
+      background-color: #666;
+      color: #fff;
+  }
+  
+  table caption {
+      caption-side: bottom;
+      font-size: 1.2em;
+      font-weight: bold;
+      padding: 10px;
+  }
+  
+  @media screen and (max-width: 600px) {
+      table {
+          border-spacing: 0;
+      }
+  }
+  /*buton back to top*/
+  #back-to-top {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(0deg, rgba(9, 27, 59, 0.7) 0%, rgba(75, 43, 181, 0.5) 50%, rgba(19, 34, 120, 0.7) 100%);
+    width: 50px;
+    height: 50px;
+    text-decoration: none;
+    color: rgb(5, 3, 28);
+    font-size: 30px;
+    border: 2px dashed white;
+    border-radius: 50%;
+    transition: all 0.5s;
+    opacity: 0.6;
+}
+
+#back-to-top:hover {
+    opacity: 1;
+    transform: rotate(360deg);
+}
+
+#back-to-top::after {
+    content: "Înapoi la începutul paginii";
+    font-size: 15px;
+    visibility: hidden;
+    width: 100px;
+    background-color: rgb(53, 53, 57);
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px 0;
+    position: absolute;
+    z-index: 1;
+    bottom: 100%; /* Position the tooltip above the text */
+    left: 50%;
+    margin-left: -60px; /* Use half of the width value to center the tooltip */
+    opacity: 0;
+    transition: visibility 0.5s, opacity 0.5s;
+}
+
+#back-to-top:hover::after {
+    visibility: visible;
+    opacity: 1;
+}
+/*animatie*/
+@keyframes move {
+  0% { left: 5%;transform: translateX(0); }
+  100% { left: 90%;transform: translateX(100%);  }
+}
+#labute {
+  position: absolute;
+  width: 50px;
+  animation: move 25s linear infinite;
+}
+
+/*slicer poze*/
+.slider {
+    position: relative;
+    height:14vw;
+    width: 100%;
+    overflow: hidden;
+}
+
+.slides {
+    display: flex;
+    transition: transform 1s ease-in-out;
+    animation: slide-animation 10s infinite;
+}
+
+.slide {
+    position: relative;
+    flex: 0 0 100%;
+}
+
+    .slide img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+.dots {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+}
+
+    .dots label {
+        width: 12px;
+        height: 12px;
+        border-radius: 50%;
+        background-color: gray;
+        margin: 0 4px;
+        cursor: pointer;
+    }
+
+#slide1:checked ~ .slides {
+    transform: translateX(0);
+}
+
+#slide2:checked ~ .slides {
+    transform: translateX(-100%);
+}
+
+#slide3:checked ~ .slides {
+    transform: translateX(-200%);
+}
+
+#slide4:checked ~ .slides {
+    transform: translateX(-300%);
+}
+
+@keyframes slide-animation {
+    0% {
+        transform: translateX(0);
+    }
+
+    20% {
+        transform: translateX(0);
+    }
+
+    40% {
+        transform: translateX(-100%);
+    }
+
+    60% {
+        transform: translateX(-100%);
+    }
+
+    80% {
+        transform: translateX(-200%);
+    }
+    100% {
+      transform: translateX(-300%);
+}
+  }
+  /* videoclip*/
+  video.customVideo::cue {
+    background-color: rgba(255, 255, 255, 0.3);
+    color: #000;
+    text-align: center;
+    vertical-align: middle;
+  }
+  
+/* --------------------------- */
+    footer {
+      text-align: center;
+      margin-top: 20px;
+    }
+  

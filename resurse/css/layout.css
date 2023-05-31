@@ -1,0 +1,39 @@
+#grid-pagina {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-areas:
+      "z-prezentare z-prezentare z-prezentare z-prezentare"
+      "z-prezentare z-prezentare z-prezentare z-prezentare"
+      "z-utilizatori-online z-utilizatori-online z-date-statistici z-date-site"
+      "z-calendar z-calendar z-tabel z-tabel"
+      "z-anunturi z-anunturi z-tabel z-tabel"
+      "z-diverse z-diverse z-diverse z-diverse";
+}
+
+#grid-pagina > * {
+    border: 2px solid rgb(144, 183, 200);
+}
+#zona1-prezentare {
+    grid-area: z-prezentare;
+}
+#zona5-utilizatori-online {
+    grid-area: z-utilizatori-online;
+}
+#zona6-date-statistici {
+    grid-area: z-date-statistici;
+}
+#zona7-date-site{
+    grid-area: z-date-site;
+}
+#zona3-calendar-evenimente{
+    grid-area: z-calendar;
+}
+#zon2-tabel{
+    grid-area: z-tabel;
+}
+#zon4-anunturi{
+    grid-area: z-anunturi;
+}
+#zona8-diverse{
+    grid-area: z-diverse;
+}

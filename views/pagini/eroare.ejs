@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <%- include("../fragmente/head.ejs", {title: "Eroare"}) %>
+    <title><%= titlu %></title>
+</head>
+<body>
+    <header><%- include("../fragmente/header.ejs") %></header>
+    
+    <h1><%= heading %></h1>
+    <p><%= text %></p>
+    <img src="<%= imagine %>" alt="<%= titlu %>" style="height: 350px; width: 350px;">
+
+    <footer><%- include("../fragmente/footer.ejs") %></footer>
+</body>
+</html>

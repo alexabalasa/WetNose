@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html  lang="ro">
+  <head><%- include("../fragmente/head.ejs", {title: "WetNose - Adopția câinilor și pisicilor"})  %></head>
+
+  <body>
+    <header><%- include("../fragmente/header.ejs")  %>
+      <div class="container">
+        <h1  style = "color:rgb(21, 21, 78)" , padding-left: 0;>WetNose - Adopția câinilor și pisicilor</h1>
+      </div>
+    </header>
+    <main>
+      <div id="grid-pagina">
+          <section id="zona1-prezentare">
+            <h2>Bine ați venit!</h2>
+            <p><b>Adoptarea unui animal de companie este un act minunat care poate aduce multă bucurie și fericire în viața dumneavoastră. Atât câinii, cât și pisicile fac niște companioni extraordinari și pot aduce multe beneficii pentru starea dumneavoastră de bine. Ținta noatră este o lume în care animăluțele sunt fericite.</b></p>
+            <p>Dacă sunteți interesat să adoptați un câine sau o pisică, există multe adăposturi și organizații de adopție unde puteți găsi animale în căutarea unui cămin iubitor.</p>
+            <div class="image-wrapper">
+              <figure>
+                <img src="/resurse/imagini/wetnose.png" alt="Animalutul" />
+                <figcaption>Prietenii noștri blănoși te așteaptă</figcaption>
+              </figure>
+            </div>
+          </section>
+          
+          <section id="zona5-utilizatori-online">
+            <h3>Feedback și Date statistici</h3>
+            <p>5 din 5 persoane care au decis să adopte un animal, se declară cu 100% mai fericiți.</p>
+            <!-- Continutul cu utilizatori online -->
+          </section>
+        
+          <section id="zona6-date-statistici">
+            <div class="slider">
+              <input type="radio" name="slider" id="slide1" style="display:none;" checked>
+              <input type="radio" name="slider" id="slide2"style="display:none;" >
+              <input type="radio" name="slider" id="slide3"style="display:none;" >
+              <input type="radio" name="slider" id="slide4"style="display:none;" >
+              <input type="radio" name="slider" id="slide5"style="display:none;" >
+      
+              <div class="slides">
+                    <div class="slide slide1">
+                        <img src="/resurse/imagini/img1.jpg" alt="Poza 1">
+                    </div>
+                    <div class="slide slide2">
+                        <img src="/resurse/imagini/img2.jpg" alt="Poza 2">
+                    </div>
+                    <div class="slide slide3">
+                        <img src="/resurse/imagini/img3.jpeg" alt="">
+                    </div>
+                    <div class="slide slide4">
+                        <img src="/resurse/imagini/img5.jpg" alt="">
+                    </div>
+              </div>
+            </div>
+          </section>
+          <section id="zona7-date-site">
+            <h3>Date site</h3>
+            <p>IP-ul tău este: <%= ip %></p>
+
+            <!-- Continutul cu date ale site-ului -->
+          </section>
+        
+          <section id="zona3-calendar-evenimente">
+            <h3>Urmărește calendarul nostru pentru a-ți întâlnii prietenii :</h3>
+            <p>L-J 9:00-17:00</p>
+            <p>V-D 9:00-12:00</p>
+            <p>Următorul eveniment : 2iulie 2023 Parcul Tineretului, București</p>
+            <video width="100%" controls preload="metadata" poster="/resurse/imagini/img5.jpg" style="max-width: 800px; min-width: 240px;">
+              <source src="/resurse/imagini/video.mp4" type="video/mp4">
+              <source src="/resurse/imagini/video.ogg" type="video/ogg">
+          
+              <track kind="captions" src="/resurse/vtt/subtitrari_ro.vtt" srclang="ro" label="Română" default>
+              <track kind="captions" src="/resurse/vtt/subtitrari_eng.vtt" srclang="en" label="English">
+          </video>
+          </section>
+        
+          <!--Tabel-->
+          <section id="zon2-tabel">
+            <h3>Tabel</h2>
+              <div class="table-container">
+                <table>
+                    <caption>Informații animale</caption>
+                    <thead>
+                        <tr>
+                            <th>Tip</th>
+                            <th>Nume</th>
+                            <th>Culoare Blana</th>
+                            <th>Vârstă</th>
+                            <th>Sex</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Caine</td>
+                            <td>Tom</td>
+                            <td>Alb</td>
+                            <td>2 ani</td>
+                            <td>Masculin</td>
+                        </tr>
+                        <tr>
+                            <td>Pisica</td>
+                            <td>Jerry</td>
+                            <td>Maro</td>
+                            <td>3 ani</td>
+                            <td>Masculin</td>
+                        </tr>
+                        <tr>
+                          <td>Caine</td>
+                            <td colspan="2">Max</td>
+                            <td>5 ani</td>
+                            <td>Masculin</td>
+                        </tr>
+                        <tr>
+                          <td>Pisica</td>
+                            <td>Spike</td>
+                            <td>Negru</td>
+                            <td rowspan="2">4 ani</td>
+                            <td>Masculin</td>
+                        </tr>
+                        <tr>
+                          <td>Pisica</td>
+                            <td>Tweety</td>
+                            <td>Gălbuie</td>
+                            <td>Feminin</td>
+                        </tr>
+                    </tbody>
+                    <tfoot>
+                        <tr>
+                            <td colspan="4">Total animale: 5</td>
+                        </tr>
+                    </tfoot>
+                </table>
+            </div>
+          </section>
+        
+          <section id="zon4-anunturi">
+            <h3>Anunțuri</h2>
+              
+          </section>
+        
+          <section id="zona8-diverse">
+            <h3>Întrebări frecvente</h2>
+            <p class="question">Care este povestea animalului? <i class="fa fa-arrow-circle-down answer-toggle"></i></p>
+              <div class="answer">Raspunsul la intrebarea legata de istoricul animalului de companie.</div>
+           
+              <p class="question">Are nevoie de ingrijire speciala? <i class="fa fa-arrow-circle-down answer-toggle"></i></p>
+              <div class="answer">Raspunsul la intrebarea legata de necesitatile speciale de ingrijire ale animalului de companie.</div>
+
+              <p class="question">Este compatibil cu alte animale de companie? <i class="fa fa-arrow-circle-down answer-toggle"></i></p>
+              <div class="answer">Raspunsul la intrebarea legata de compatibilitatea cu alte animale de companie.</div>
+
+              <p class="question">Cat costa intretinerea lui pe termen lung? <i class="fa fa-arrow-circle-down answer-toggle"></i></p>
+              <div class="answer">Raspunsul la intrebarea legata de costurile implicate in intretinerea pe termen lung a animalului de companie.</div>
+
+              <p class="question">Cat timp petrece singur si cum poate fi obosit? <i class="fa fa-arrow-circle-down answer-toggle"></i></p>
+              <div class="answer">Raspunsul la intrebarea legata de cantitatea de timp petrecut singur si cum il poti obosi pe animalul de companie.</div>
+          </section>
+      </div>
+    </main>
+    <footer><%- include("../fragmente/footer.ejs")  %> </footer>
+  </body>
+</html>

@@ -1,0 +1,32 @@
+<div class="galerie">
+    <% json.imagini.forEach(function(imagine, index) { %>
+      <% if (verificaIntervalOrar(imagine.intervale_ore)) { %>
+        <figure class="imag">
+          <picture>
+            <source srcset="<%= json.cale_galerie %>/<%= imagine.cale_relativa %>" media="(min-width: 768px)">
+            <source srcset="<%= json.cale_galerie %>/<%= imagine.cale_relativa %>">
+            <img src="<%= json.cale_galerie %>/<%= imagine.cale_relativa %>" alt="<%= imagine.alternativ %>">
+          </picture>
+          <figcaption><%= indexToString(index + 1) %>. <%= imagine.nume_imag %></figcaption>
+        </figure>
+      <% } %>
+    <% }) %>
+  </div>
+  
+  <script>
+    function verificaIntervalOrar(intervale) {
+      const oraCurenta = new Date().getHours();
+      for (let i = 0; i < intervale.length; i++) {
+        const interval = intervale[i];
+        if (oraCurenta >= interval[0] && oraCurenta <= interval[1]) {
+          return true;
+        }
+      }
+      return false;
+    }
+  
+    function indexToString(index) {
+      return index.toString().padStart(2, '0');
+    }
+  </script>
+  

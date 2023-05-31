@@ -1,0 +1,14 @@
+{
+    "403": {
+        "titlu": "Eroare 403",
+        "heading": "Eroare 403",
+        "text": "Accesul la această resursă nu este permis.",
+        "imagine": "/resurse/imagini/403.png"
+    },
+    "404": {
+        "titlu": "Eroare 404",
+        "heading": "Eroare 404",
+        "text": "Pagina pe care o cauți nu există.",
+        "imagine": "/resurse/imagini/404.png"
+    }
+}
